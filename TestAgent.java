@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "Feature"
-		,glue={"stepDefinition"}
+		,glue={"stepDefinitionAgent"}
 		)
 
 public class TestAgent {
