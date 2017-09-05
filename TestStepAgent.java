@@ -7,55 +7,59 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class TestStepAgent {
+	String answer;
+	Double a, b, c, d, e, f;
+	
+	@Given("^I have a and b$")
+	public void i_have_a_and_b() throws Throwable {
+		a = 2.0; 
+		b = 3.0;
+	}
 
 	@When("^I add two valid numbers$")
 	public void i_add_two_valid_numbers() throws Throwable {
-	    throw new PendingException();
+		Calculate calc = new Calculate();
+		answer = calc.addStringParamGet(a, b);
 	}
 
 	@Then("^I should get positive answer$")
 	public void i_should_get_positive_answer() throws Throwable {
-	    throw new PendingException();
+		System.out.println("Answer =   " + answer);
+	}
+	
+	@Given("^I have c and d$")
+	public void i_have_c_and_d() throws Throwable {
+		 c = 1.5; 
+		 d = 1.5;
+	}	
+	@When("^I add two parameters$")
+	public void i_add_two_parameters() throws Throwable {
+		Calculate calc = new Calculate();
+		answer = calc.addStringParamGet(c, d);
 	}
 
-	@Then("^status one$")
-	public void status_one() throws Throwable {
-	    throw new PendingException();
+	@Then("^I should get the correct answer$")
+	public void i_should_get_the_correct_answer() throws Throwable {
+		System.out.println("Answer =   " + answer);
+
 	}
 
-	@When("^I add two null parameters$")
-	public void i_add_two_null_parameters() throws Throwable {
-	    throw new PendingException();
-	}
-
-	@Then("^I should get null answer$")
-	public void i_should_get_null_answer() throws Throwable {
-	    throw new PendingException();
-	}
-
-	@Then("^status zero$")
-	public void status_zero() throws Throwable {
-	    throw new PendingException();
-	}
-
+	@Given("^I have e and f$")
+	public void i_have_e_and_f() throws Throwable {
+		e = -2.0; 
+	    f = -3.0;
+	}	
+	
 	@When("^I add two negative numbers$")
 	public void i_add_two_negative_numbers() throws Throwable {
-	    throw new PendingException();
+		Calculate calc = new Calculate();
+		answer = calc.addStringParamGet(e, f);
 	}
 
 	@Then("^I should get negative answer$")
 	public void i_should_get_negative_answer() throws Throwable {
-	    throw new PendingException();
-	}
+		System.out.println("Answer =   " + answer);
 
-	@When("^I add non-numeric values$")
-	public void i_add_non_numeric_values() throws Throwable {
-	    throw new PendingException();
-	}
-
-	@Then("^I should get bad result$")
-	public void i_should_get_bad_result() throws Throwable {
-	    throw new PendingException();
 	}
 	
 }
